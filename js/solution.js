@@ -16,8 +16,9 @@
         for (let i=0; i<map.length; i++) {
           for (let j=0; j<map[0].length; j++) {
             if (arr[i][j]==1 && arr[i][j+1]==1) {arr[i][j]=2;}
+            if (arr[i][j]==1 && (arr[i][j+1]==0 || arr[i][j+1]==undefined)) {count+=1;}
             if (arr[i][j]==2 && arr[i+1][j]==1) {arr[i+1][j]=2;}
-            if (arr[i][j]==1) {count+=1;}
+            if (arr[i][j]==2 && arr[i][j+1]==1) {arr[i][j+1]=2;}
           }
         }
         return count;
